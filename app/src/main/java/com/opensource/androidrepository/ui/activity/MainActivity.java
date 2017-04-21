@@ -4,12 +4,17 @@ import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.opensource.androidrepository.R;
 import com.opensource.androidrepository.ui.custom.CommomDialog;
+import com.opensource.androidrepository.ui.custom.MenuPopupWindow;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private TextView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView(){
         findViewById(R.id.txt).setOnClickListener(this);
+        menu =(TextView)findViewById(R.id.menu);
+        menu.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +45,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                         .setTitle("提示").show();
+                break;
+            case R.id.menu:
+                MenuPopupWindow menuPopupWindow = new MenuPopupWindow(this, new MenuPopupWindow.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(PopupWindow popupWindow, int position) {
+
+                        popupWindow.dismiss();
+                    }
+                });
+                menuPopupWindow.showAsDropDown(menu, -200, 40);
                 break;
         }
     }
