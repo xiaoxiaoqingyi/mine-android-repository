@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.opensource.androidrepository.R;
 import com.opensource.androidrepository.ui.custom.CommomDialog;
 import com.opensource.androidrepository.ui.custom.MenuPopupWindow;
+import com.opensource.androidrepository.ui.custom.ShareDialog;
+import com.opensource.androidrepository.util.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView(){
         findViewById(R.id.txt).setOnClickListener(this);
+        findViewById(R.id.share).setOnClickListener(this);
         menu =(TextView)findViewById(R.id.menu);
         menu.setOnClickListener(this);
     }
@@ -55,6 +58,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
                 menuPopupWindow.showAsDropDown(menu, -200, 40);
+                break;
+            case R.id.share:
+                new ShareDialog(MainActivity.this, R.style.dialog, new ShareDialog.OnItemClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, int position) {
+                        dialog.dismiss();
+                        switch (position){
+                            case 1:
+                                Utils.toast(MainActivity.this,"微信好友");
+                                break;
+                            case 2:
+                                Utils.toast(MainActivity.this,"朋友圈");
+                                break;
+                            case 3:
+                                Utils.toast(MainActivity.this,"QQ");
+                                break;
+                            case 4:
+                                Utils.toast(MainActivity.this,"微博");
+                                break;
+                        }
+                    }
+                }).show();
                 break;
         }
     }
