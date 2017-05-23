@@ -27,6 +27,11 @@ public class CommomDialog extends Dialog implements View.OnClickListener{
         super(context);
         this.mContext = context;
     }
+    public CommomDialog(Context context, String content) {
+        super(context, R.style.dialog);
+        this.mContext = context;
+        this.content = content;
+    }
 
     public CommomDialog(Context context, int themeResId, String content) {
         super(context, themeResId);
