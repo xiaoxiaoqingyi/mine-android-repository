@@ -9,7 +9,7 @@ import com.opensource.androidrepository.R;
 
 public class MentionActivity extends AppCompatActivity {
 
-    private static final Uri PROFILE_URI = Uri.parse(MainActivity.MENTIONS_SCHEMA);
+    private static final Uri PROFILE_URI = Uri.parse(LinkTextActivity.MENTIONS_SCHEMA);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class MentionActivity extends AppCompatActivity {
         //获取用户点击的 用户名
         Uri uri = getIntent().getData();
         if (uri !=null && PROFILE_URI.getScheme().equals(uri.getScheme())) {
-            String content = uri.getQueryParameter(MainActivity.PARAM_CONTENT);
+            String content = uri.getQueryParameter(LinkTextActivity.PARAM_CONTENT);
             setTitle(content);
             txt.setText("获取到的内容为："+content);
         }

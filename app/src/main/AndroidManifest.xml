@@ -16,24 +16,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MentionActivity" >
+        <activity android:name=".ui.activity.MentionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="weibo_mention"
-                      android:scheme="devdiv" />
+
+                <data
+                    android:host="weibo_mention"
+                    android:scheme="devdiv" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.TrendActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="weibo_trend"
+
+                <data
+                    android:host="weibo_trend"
                     android:scheme="devdiv" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.LinkTextActivity" />
+        <activity android:name=".ui.activity.AllDialogActivity"></activity>
     </application>
 
 </manifest>

@@ -2,4 +2,5 @@
     <string name="app_name">我的库</string>
 
     <string name="link_text">#北京事儿#【[衰]】@老大的二拇脚趾头 ：北京奥体中心，一辆空气净化车对着一个空气监测站一直喷。然而，并没有什么卵用。 @姗姗 ​​​​</string>
+    <string name="title_activity_all_dialog">AllDialogActivity</string>
 </resources>
