@@ -41,7 +41,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.LinkTextActivity" />
-        <activity android:name=".ui.activity.AllDialogActivity"></activity>
+        <activity android:name=".ui.activity.AllDialogActivity" />
+        <activity android:name=".ui.activity.DrawFocusRectActivity"></activity>
     </application>
 
 </manifest>

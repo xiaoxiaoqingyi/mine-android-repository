@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity{
                     case 1:
                         startActivity(new Intent(MainActivity.this, LinkTextActivity.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(MainActivity.this, DrawFocusRectActivity.class));
+                        break;
                 }
             }
         });
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity{
         List<String> data = new ArrayList<>();
         data.add("所有弹框");
         data.add("TextView文本识别，点击并跳转");
+        data.add("动态画矩形框，焦点框");
 
         return data;
    }
